@@ -3,7 +3,7 @@ import { useEffect, useState } from "react"
 
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
-  const [isDark, setIsDark] = useState(true)
+  const [isDark, setIsDark] = useState(() => typeof document !== "undefined" ? !document.documentElement.classList.contains("light") : true)
 
   useEffect(() => {
     const savedTheme = localStorage.getItem("skillforge-theme")

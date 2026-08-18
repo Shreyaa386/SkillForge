@@ -71,16 +71,19 @@ html.light .app-background {
 }
 
 /* Main text */
-
 html.light .app-text {
   color: #111111;
 }
 
-/* Dark backgrounds */
-
+/* Dark backgrounds and headers */
 html.light .bg-\[\#09090b\],
 html.light .bg-\[\#09090B\] {
   background-color: #f8f8f6 !important;
+}
+
+html.light .bg-\[\#09090b\]\/80,
+html.light .bg-\[\#09090B\]\/80 {
+  background-color: rgba(248, 248, 246, 0.8) !important;
 }
 
 html.light .bg-\[\#111113\] {
@@ -88,12 +91,14 @@ html.light .bg-\[\#111113\] {
 }
 
 /* White text */
-
 html.light .text-white {
   color: #111111 !important;
 }
 
 /* White text with opacity */
+html.light .text-white\/20 {
+  color: rgba(17, 17, 17, 0.3) !important;
+}
 
 html.light .text-white\/25 {
   color: rgba(17, 17, 17, 0.35) !important;
@@ -128,7 +133,6 @@ html.light .text-white\/70 {
 }
 
 /* Borders */
-
 html.light .border-white\/10 {
   border-color: rgba(17, 17, 17, 0.1) !important;
 }
@@ -137,18 +141,95 @@ html.light .border-white\/20 {
   border-color: rgba(17, 17, 17, 0.18) !important;
 }
 
-/* White buttons */
+html.light .border-white\/30 {
+  border-color: rgba(17, 17, 17, 0.25) !important;
+}
 
+html.light .border-white\/40 {
+  border-color: rgba(17, 17, 17, 0.35) !important;
+}
+
+/* Translucent backgrounds on cards / items */
+html.light .bg-white\/10 {
+  background-color: rgba(17, 17, 17, 0.08) !important;
+}
+
+html.light .bg-white\/20 {
+  background-color: rgba(17, 17, 17, 0.15) !important;
+}
+
+html.light .bg-white\/40 {
+  background-color: rgba(17, 17, 17, 0.3) !important;
+}
+
+html.light .bg-white\/\[0\.015\] {
+  background-color: rgba(17, 17, 17, 0.02) !important;
+}
+
+html.light .bg-white\/\[0\.02\] {
+  background-color: rgba(17, 17, 17, 0.025) !important;
+}
+
+html.light .bg-white\/\[0\.025\] {
+  background-color: rgba(17, 17, 17, 0.03) !important;
+}
+
+html.light .bg-white\/\[0\.03\] {
+  background-color: rgba(17, 17, 17, 0.035) !important;
+}
+
+html.light .bg-white\/\[0\.035\] {
+  background-color: rgba(17, 17, 17, 0.04) !important;
+}
+
+html.light .bg-white\/\[0\.04\] {
+  background-color: rgba(17, 17, 17, 0.045) !important;
+}
+
+html.light .bg-white\/\[0\.045\] {
+  background-color: rgba(17, 17, 17, 0.05) !important;
+}
+
+html.light .bg-white\/\[0\.05\] {
+  background-color: rgba(17, 17, 17, 0.055) !important;
+}
+
+html.light .bg-white\/\[0\.06\] {
+  background-color: rgba(17, 17, 17, 0.065) !important;
+}
+
+html.light .bg-white\/\[0\.07\] {
+  background-color: rgba(17, 17, 17, 0.08) !important;
+}
+
+html.light .bg-white\/\[0\.08\] {
+  background-color: rgba(17, 17, 17, 0.09) !important;
+}
+
+/* Primary Action / Contrast Elements (.bg-white) */
 html.light .bg-white {
   background-color: #111111 !important;
   color: #ffffff !important;
 }
 
+/* Ensure elements inside .bg-white with text-black turn white so icons and text are visible */
+html.light .bg-white.text-black,
+html.light .bg-white .text-black,
+html.light .bg-white svg,
+html.light .bg-white span {
+  color: #ffffff !important;
+}
+
+/* Progress bar fill - in light mode progress fills should stay dark fill on light track */
+html.light .bg-white.h-full,
+html.light .bg-white.rounded-full.h-full {
+  background-color: #111111 !important;
+}
+
+/* Hover States */
 html.light .hover\:bg-white\/90:hover {
   background-color: #222222 !important;
 }
-
-/* Dark buttons / outlines */
 
 html.light .hover\:bg-white\/10:hover {
   background-color: rgba(17, 17, 17, 0.08) !important;
@@ -158,14 +239,30 @@ html.light .hover\:bg-white\/5:hover {
   background-color: rgba(17, 17, 17, 0.05) !important;
 }
 
-/* Chatbot */
+html.light .hover\:bg-white\/\[0\.04\]:hover {
+  background-color: rgba(17, 17, 17, 0.05) !important;
+}
 
-html.light .bg-white\/\[0\.06\] {
+html.light .hover\:bg-white\/\[0\.05\]:hover {
   background-color: rgba(17, 17, 17, 0.06) !important;
 }
 
-html.light .bg-white\/\[0\.03\] {
-  background-color: rgba(17, 17, 17, 0.03) !important;
+html.light .hover\:border-white\/20:hover {
+  border-color: rgba(17, 17, 17, 0.25) !important;
+}
+
+html.light .hover\:text-white:hover {
+  color: #111111 !important;
+}
+
+html.light .hover\:text-white\/60:hover {
+  color: rgba(17, 17, 17, 0.8) !important;
+}
+
+/* Input Placeholders */
+html.light .placeholder\:text-white\/25::placeholder,
+html.light input::placeholder {
+  color: rgba(17, 17, 17, 0.4) !important;
 }
 
 /* Selection */
