@@ -1,165 +1,87 @@
-import { ArrowDown, ArrowRight, Check, X } from "lucide-react"
+import {
+  BookOpen,
+  Compass,
+  Layers3,
+  Target,
+} from "lucide-react"
 
 function ProblemSection() {
+  const problems = [
+    {
+      icon: Compass,
+      title: "Too many directions",
+      description:
+        "You find dozens of technologies, courses, and tutorials but don't know which one actually matters.",
+    },
+    {
+      icon: BookOpen,
+      title: "Endless tutorials",
+      description:
+        "Watching another tutorial feels productive, but without practice and projects, the knowledge rarely sticks.",
+    },
+    {
+      icon: Layers3,
+      title: "Scattered learning",
+      description:
+        "Your learning resources live across bookmarks, videos, courses, notes, and random GitHub repositories.",
+    },
+    {
+      icon: Target,
+      title: "No clear destination",
+      description:
+        "Without knowing what you're working toward, it's difficult to decide what to learn next.",
+    },
+  ]
+
   return (
-    <section className="border-t border-white/10 py-24 lg:py-32">
+    <section className="border-t border-white/10 py-20 sm:py-24 lg:py-32">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
 
-        <div className="mx-auto max-w-3xl text-center">
-          <p className="text-sm font-semibold uppercase tracking-[0.25em] text-white/40">
-            The problem
-          </p>
+        <div className="grid gap-12 lg:grid-cols-[0.8fr_1.2fr] lg:gap-20">
 
-          <h2 className="mt-5 text-4xl font-semibold tracking-tight sm:text-5xl">
-            Learning shouldn't feel
-            <span className="text-white/40"> this confusing.</span>
-          </h2>
+          <div className="max-w-xl">
+            <p className="text-sm font-semibold uppercase tracking-[0.25em] text-white/40">
+              The problem
+            </p>
 
-          <p className="mt-6 text-lg leading-8 text-white/50">
-            The internet gives you endless resources. What it doesn't give
-            you is a clear answer to what you should learn next.
-          </p>
-        </div>
+            <h2 className="mt-5 text-3xl font-semibold tracking-tight sm:text-4xl lg:text-5xl">
+              Learning isn't hard.
+              <span className="block text-white/35">
+                Knowing what to learn is.
+              </span>
+            </h2>
 
-        <div className="mt-16 grid gap-6 lg:grid-cols-2">
-
-          {/* Without SkillForge */}
-
-          <div className="rounded-3xl border border-white/10 bg-white/[0.02] p-7 sm:p-9">
-
-            <div className="flex items-center gap-3">
-              <div className="flex h-10 w-10 items-center justify-center rounded-full border border-white/10">
-                <X size={18} className="text-white/50" />
-              </div>
-
-              <div>
-                <p className="text-sm text-white/40">
-                  Without SkillForge
-                </p>
-
-                <h3 className="mt-1 text-xl font-semibold">
-                  The learning maze
-                </h3>
-              </div>
-            </div>
-
-            <div className="mt-10 space-y-2">
-
-              <div className="rounded-2xl border border-white/10 p-5">
-                <p className="font-medium">100+ tutorials</p>
-                <p className="mt-1 text-sm text-white/35">
-                  Too many places to start.
-                </p>
-              </div>
-
-              <div className="flex justify-center py-1">
-                <ArrowDown size={16} className="text-white/20" />
-              </div>
-
-              <div className="rounded-2xl border border-white/10 p-5">
-                <p className="font-medium">Conflicting advice</p>
-                <p className="mt-1 text-sm text-white/35">
-                  Everyone recommends something different.
-                </p>
-              </div>
-
-              <div className="flex justify-center py-1">
-                <ArrowDown size={16} className="text-white/20" />
-              </div>
-
-              <div className="rounded-2xl border border-white/10 p-5">
-                <p className="font-medium">Random learning</p>
-                <p className="mt-1 text-sm text-white/35">
-                  You keep switching between topics.
-                </p>
-              </div>
-
-              <div className="flex justify-center py-1">
-                <ArrowDown size={16} className="text-white/20" />
-              </div>
-
-              <div className="rounded-2xl border border-white/10 bg-white/[0.04] p-5">
-                <p className="font-medium text-white/60">
-                  "What should I learn next?"
-                </p>
-                <p className="mt-1 text-sm text-white/30">
-                  The question keeps coming back.
-                </p>
-              </div>
-
-            </div>
+            <p className="mt-6 text-base leading-7 text-white/45 sm:text-lg sm:leading-8">
+              The internet gives you unlimited information. SkillForge helps
+              you turn that information into a focused path.
+            </p>
           </div>
 
-          {/* With SkillForge */}
+          <div className="grid gap-3 sm:grid-cols-2">
 
-          <div className="rounded-3xl border border-white/20 bg-white/[0.045] p-7 sm:p-9">
+            {problems.map((problem) => {
+              const Icon = problem.icon
 
-            <div className="flex items-center gap-3">
-              <div className="flex h-10 w-10 items-center justify-center rounded-full bg-white text-black">
-                <Check size={18} />
-              </div>
+              return (
+                <div
+                  key={problem.title}
+                  className="rounded-2xl border border-white/10 bg-white/[0.025] p-5 transition duration-300 hover:border-white/20 hover:bg-white/[0.04] sm:p-6"
+                >
+                  <div className="flex h-10 w-10 items-center justify-center rounded-xl border border-white/10">
+                    <Icon size={18} />
+                  </div>
 
-              <div>
-                <p className="text-sm text-white/50">
-                  With SkillForge
-                </p>
+                  <h3 className="mt-6 font-medium">
+                    {problem.title}
+                  </h3>
 
-                <h3 className="mt-1 text-xl font-semibold">
-                  A clear path forward
-                </h3>
-              </div>
-            </div>
-
-            <div className="mt-10 space-y-2">
-
-              <div className="rounded-2xl border border-white/10 bg-white/[0.035] p-5">
-                <p className="font-medium">Choose your goal</p>
-                <p className="mt-1 text-sm text-white/35">
-                  Start with the career you want.
-                </p>
-              </div>
-
-              <div className="flex justify-center py-1">
-                <ArrowDown size={16} className="text-white/30" />
-              </div>
-
-              <div className="rounded-2xl border border-white/10 bg-white/[0.035] p-5">
-                <p className="font-medium">Get your roadmap</p>
-                <p className="mt-1 text-sm text-white/35">
-                  Know exactly which skills come next.
-                </p>
-              </div>
-
-              <div className="flex justify-center py-1">
-                <ArrowDown size={16} className="text-white/30" />
-              </div>
-
-              <div className="rounded-2xl border border-white/10 bg-white/[0.035] p-5">
-                <p className="font-medium">Practice & build</p>
-                <p className="mt-1 text-sm text-white/35">
-                  Turn knowledge into practical projects.
-                </p>
-              </div>
-
-              <div className="flex justify-center py-1">
-                <ArrowDown size={16} className="text-white/30" />
-              </div>
-
-              <div className="flex items-center justify-between rounded-2xl border border-white/20 bg-white/[0.08] p-5">
-                <div>
-                  <p className="font-medium">Make measurable progress</p>
-                  <p className="mt-1 text-sm text-white/35">
-                    Always know your next milestone.
+                  <p className="mt-2 text-sm leading-6 text-white/35">
+                    {problem.description}
                   </p>
                 </div>
+              )
+            })}
 
-                <ArrowRight
-                  size={20}
-                  className="shrink-0 text-white/50"
-                />
-              </div>
-
-            </div>
           </div>
 
         </div>
