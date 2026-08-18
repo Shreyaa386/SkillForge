@@ -6,10 +6,11 @@ import ProductShowcase from "./components/ProductShowcase"
 import RoadmapPreview from "./components/RoadmapPreview"
 import CTA from "./components/CTA"
 import Footer from "./components/Footer"
+import ForgeAssistant from "./components/ForgeAssistant"
 
 function App() {
   return (
-    <div className="min-h-screen bg-[#09090B] text-white">
+    <div className="min-h-screen app-background app-text">
       <Navbar />
 
       <main>
@@ -22,6 +23,8 @@ function App() {
       </main>
 
       <Footer />
+
+      <ForgeAssistant />
     </div>
   )
 }

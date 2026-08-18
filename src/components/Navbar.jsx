@@ -1,8 +1,35 @@
-import { Menu, X } from "lucide-react"
-import { useState } from "react"
+import { Menu, X, Sun, Moon } from "lucide-react"
+import { useEffect, useState } from "react"
 
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
+  const [isDark, setIsDark] = useState(true)
+
+  useEffect(() => {
+    const savedTheme = localStorage.getItem("skillforge-theme")
+
+    if (savedTheme === "light") {
+      setIsDark(false)
+      document.documentElement.classList.add("light")
+    } else {
+      setIsDark(true)
+      document.documentElement.classList.remove("light")
+    }
+  }, [])
+
+  const toggleTheme = () => {
+    const nextDark = !isDark
+
+    setIsDark(nextDark)
+
+    if (nextDark) {
+      document.documentElement.classList.remove("light")
+      localStorage.setItem("skillforge-theme", "dark")
+    } else {
+      document.documentElement.classList.add("light")
+      localStorage.setItem("skillforge-theme", "light")
+    }
+  }
 
   const closeMenu = () => {
     setIsOpen(false)
@@ -27,8 +54,6 @@ function Navbar() {
             SkillForge
           </span>
         </a>
-
-        {/* Desktop Navigation */}
 
         <div className="hidden items-center gap-8 md:flex">
 
@@ -55,31 +80,43 @@ function Navbar() {
 
         </div>
 
-        <a
-          href="#roadmaps"
-          className="hidden rounded-full bg-white px-5 py-2.5 text-sm font-medium text-black transition hover:bg-white/90 md:inline-flex"
-        >
-          Get started
-        </a>
+        <div className="flex items-center gap-3">
 
-        {/* Mobile Menu Button */}
+          <button
+            onClick={toggleTheme}
+            className="flex h-10 w-10 items-center justify-center rounded-full border border-white/10 text-white/60 transition hover:border-white/20 hover:text-white"
+            aria-label="Toggle theme"
+          >
+            {isDark ? (
+              <Sun size={18} />
+            ) : (
+              <Moon size={18} />
+            )}
+          </button>
 
-        <button
-          onClick={() => setIsOpen(!isOpen)}
-          className="flex h-10 w-10 items-center justify-center rounded-full border border-white/10 text-white/70 transition hover:border-white/20 hover:text-white md:hidden"
-          aria-label={isOpen ? "Close menu" : "Open menu"}
-          aria-expanded={isOpen}
-        >
-          {isOpen ? (
-            <X size={20} />
-          ) : (
-            <Menu size={20} />
-          )}
-        </button>
+          <a
+            href="#roadmaps"
+            className="hidden rounded-full bg-white px-5 py-2.5 text-sm font-medium text-black transition hover:bg-white/90 md:inline-flex"
+          >
+            Get started
+          </a>
+
+          <button
+            onClick={() => setIsOpen(!isOpen)}
+            className="flex h-10 w-10 items-center justify-center rounded-full border border-white/10 text-white/70 transition hover:border-white/20 hover:text-white md:hidden"
+            aria-label={isOpen ? "Close menu" : "Open menu"}
+            aria-expanded={isOpen}
+          >
+            {isOpen ? (
+              <X size={20} />
+            ) : (
+              <Menu size={20} />
+            )}
+          </button>
+
+        </div>
 
       </nav>
-
-      {/* Mobile Navigation */}
 
       {isOpen && (
         <div className="border-t border-white/10 bg-[#09090b] px-6 py-5 md:hidden">
@@ -122,7 +159,6 @@ function Navbar() {
 
         </div>
       )}
-
     </header>
   )
 }
