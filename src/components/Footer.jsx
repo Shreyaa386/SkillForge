@@ -1,8 +1,8 @@
 import {
   ArrowUpRight,
-  Github,
-  Linkedin,
-  Twitter,
+  Code2,
+  Users,
+  MessageCircle,
 } from "lucide-react"
 
 function Footer() {
@@ -104,21 +104,21 @@ function Footer() {
                 href="#"
                 className="flex h-9 w-9 items-center justify-center rounded-full border border-white/10 text-white/40 transition hover:border-white/20 hover:text-white"
               >
-                <Github size={16} />
+                <Code2 size={16} />
               </a>
 
               <a
                 href="#"
                 className="flex h-9 w-9 items-center justify-center rounded-full border border-white/10 text-white/40 transition hover:border-white/20 hover:text-white"
               >
-                <Linkedin size={16} />
+                <Users size={16} />
               </a>
 
               <a
                 href="#"
                 className="flex h-9 w-9 items-center justify-center rounded-full border border-white/10 text-white/40 transition hover:border-white/20 hover:text-white"
               >
-                <Twitter size={16} />
+                <MessageCircle size={16} />
               </a>
 
             </div>
@@ -133,11 +133,17 @@ function Footer() {
           </p>
 
           <div className="flex gap-5">
-            <a href="#" className="transition hover:text-white/60">
+            <a
+              href="#"
+              className="transition hover:text-white/60"
+            >
               Privacy
             </a>
 
-            <a href="#" className="transition hover:text-white/60">
+            <a
+              href="#"
+              className="transition hover:text-white/60"
+            >
               Terms
             </a>
           </div>
